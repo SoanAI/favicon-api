@@ -68,6 +68,10 @@ app.use(cors());
 app.use(limiter);
 app.use(morgan('combined'));
 
+  app.get('/', (req, res) => {
+    res.send('SoanAI Favicon API is live! See /health or /favicon?url=...');
+  });
+
 app.get('/favicon', async (req, res) => {
   const { url } = req.query;
   if (!url) {
